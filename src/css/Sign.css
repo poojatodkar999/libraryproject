@@ -1,0 +1,226 @@
+
+.container{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.left_container{
+    background-color: #EFF5FF;
+
+    width:55%;
+    position: relative;
+
+
+}
+
+.left_container img{
+ position: absolute;
+ top:50%;
+ left: 50%;
+ transform:translate(-50%,-50%)
+
+}
+
+.right_container{
+    width:45%;
+    padding: 0 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+
+}
+
+.logoimg{
+    /* position: absolute; */
+    top:10px;
+width: 150px;
+/* height: 194px; */
+/* left: 1052px; */
+/* top: 17px; */
+}
+
+.main_toggle{
+    display: flex;
+    position: relative;
+    /* border:1px solid #008BCD; */
+    border-radius: 5px;
+    background-color: #EFF5FF;
+    margin-bottom: 10px;
+
+
+
+}
+.toggler{
+    position:absolute;
+    width: 50%;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    transition: .6s;
+    height: 100%;
+    background-color:  #008BCD;
+    z-index: 1;
+}
+
+.receiver, .issuer{
+    width: 50%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+
+}
+.receiver span, .issuer span{
+    color: #fff;
+    transition: .6s;
+}
+.receiver.active span, .issuer.active span{
+    color: #008BCD;
+}
+.receiver svg, .issuer svg{
+    fill: #fff;
+    transition: .6s;
+    margin: 0 8px;
+}
+ .receiver.active svg{
+    fill: #008BCD;
+}
+.issuer.active svg{
+    fill: #008BCD;
+}
+
+
+.heading{
+    font-weight: 0;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.sub-heading{
+    padding: 20px 0;
+    font-size: 12px;
+}
+
+.right_container > div{
+    width: 80%;
+}
+
+.right_container > div > div{
+    width: 100%;
+}
+
+
+.right_container form div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.right_container form input{
+    padding:  10px 10px !important;
+    margin: 10px 0;
+    background-color: #EFF5FF;
+    border: none;
+    outline: none;
+
+}
+.right_container form button{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+    background: #A7A7A7;
+    color: #fff;
+    outline: none;
+    border: none;
+    /* border: 1px solid #008BCD ; */
+    margin: 10px 0;
+    cursor: pointer;
+}
+.forgotbtn{
+    width: 100%;
+    display: block;
+    text-align: right;
+    padding: 5px 10px;
+}
+.signup_text{
+    width: 100%;
+    text-align: right;
+    padding: 0px 10px;
+    transition: .6s;
+
+    /* display: ; */
+
+}
+
+/* SignUp css */
+.Blue_button{
+    margin-top: 70px;
+}
+.Blue_button button{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    background: #2689C3;
+    color: #fff;
+    outline: none;
+    border: none;
+    /* border: 1px solid #008BCD ; */
+    margin: 10px 0;
+    cursor: pointer;
+}
+.signup_subheading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    
+
+}
+.signup_subheading span{
+    font-weight: 500;
+    color: #666;
+}
+
+
+
+
+
+/************************************************* signup_form *******************************************/
+.signup_form p{
+    width: 100%;
+    text-align: center;
+    text-align: left;
+    margin:2px 0;
+
+}
+.signup_form  input{
+    width: 100%;
+    padding:  15px 15px;
+    margin-bottom: 5px;
+    background-color: #EFF5FF;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+}
+.btn_blue{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    background: #2689C3;
+    color: #fff;
+    outline: none;
+    border: none;
+    /* border: 1px solid #008BCD ; */
+    margin: 10px 0;
+    cursor: pointer;
+}
