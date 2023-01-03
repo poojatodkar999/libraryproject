@@ -3,25 +3,107 @@ import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { MainListItems } from "./menulist/ListItems";
 
-import "./dashboard.css"
-import { Outlet } from "react-router-dom";
+import "../../dashboard/dashboard.css"
+import { Stack } from "@mui/system";
+import logo from "../../../Images/u-smart.svg"
+import SearchIcon from "@mui/icons-material/Search";
+import MuiAppBar from "@mui/material/AppBar";
 
-export default function Dashboard(props) {
+import { Link, Outlet, useNavigate } from "react-router-dom";
+
+import { Button, Grid, InputBase, Paper, Toolbar, Typography } from "@mui/material";
+
+
+
+
+
+
+
+
+
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: "#fff",
+  color: "#000",
+  border: " 1px solid #fff",
+
+  "&:hover": {
+    //   backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(1),
+    width: "auto",
+  },
+}));
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "12c",
+      "&:focus": {
+        width: "20ch",
+      },
+    },
+  },
+}));
+export default function AdminDash(props) {
 
 
 const drawerWidth = props.drawerWidth;
 const open=props.open;
 const setOpen=props.setOpen;
 const toggle= props.toggle;
+
+
+const AppBar = styled(MuiAppBar, {
+    shouldForwardProp: (prop) => prop !== "open",
+  })(({ theme, open }) => ({
+    zIndex: theme.zIndex + 1,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    boxShadow:"none",
+    // width: `calc(100% - ${drawerWidth}px)`,
+  
+    width: "96.2%",
+    backgroundColor: "#EFF5FF",
+   ...(open && {
+      marginLeft: props.drawerWidth,
+      width: `calc(100% - ${props.drawerWidth}px)`,
+      transition: theme.transitions.create(["width", "margin"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+     
+    }),
+  }));
 
 
 const Drawer = styled(MuiDrawer, {
@@ -37,7 +119,7 @@ const Drawer = styled(MuiDrawer, {
     }),
     background: "#2689C3",
 
-    boxSizing: "border-box",
+     boxSizing: "border-box",
     color: "#fff",
     ...(!open && {
       overflowX: "hidden",
@@ -85,7 +167,7 @@ const mdTheme = createTheme();
                     justifyContent: "space-around",
                   }}
                 >
-                { toggle ? <>
+             <>
                  <img
                     style={{
                       borderRadius: "50%",
@@ -96,18 +178,8 @@ const mdTheme = createTheme();
                     src="https://media.istockphoto.com/id/1300972574/photo/millennial-male-team-leader-organize-virtual-workshop-with-employees-online.jpg?s=170667a&w=0&k=20&c=S9AVbcsSpY1e6vwbnrrZHJzlAtnuSQKtmk11fDItSHE="
                     alt="profile"
                   />
-                  <Typography sx={{ p: 1 }}>Admin </Typography></>:<>
-                 <img
-                    style={{
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                      marginRight: "10px",
-                    }}
-                    src="https://media.istockphoto.com/id/1300972574/photo/millennial-male-team-leader-organize-virtual-workshop-with-employees-online.jpg?s=170667a&w=0&k=20&c=S9AVbcsSpY1e6vwbnrrZHJzlAtnuSQKtmk11fDItSHE="
-                    alt="profile"
-                  />
-                  <Typography sx={{ p: 1 }}>John Doe </Typography></>}
+                  <Typography sx={{ p: 1 }}>Admin </Typography></>
+                  
                   <IconButton onClick={toggleDrawer}>
                     <ChevronLeftIcon />
                   </IconButton>
@@ -146,11 +218,44 @@ const mdTheme = createTheme();
               padding: "15px",
             }}
           >
-            <Outlet/>
+           <Toolbar />
+        
+        <AppBar position={"absolute"} open={open}>
+   <Toolbar
+     sx={{
+       // pr: "24px", // keep right padding when drawer closed
+       display: "flex",
+       justifyContent: "space-between",
+     }}
+   >
+    
+     <Search>
+       <SearchIconWrapper>
+         <SearchIcon />
+       </SearchIconWrapper>
+       <StyledInputBase
+         placeholder="Search Book..."
+         inputProps={{ "aria-label": "search" }}
+       />
+     </Search>
+     <Stack spacing={2} direction="row">
+       <Button>help</Button>
+       <img src={logo} style={{ width: "50px" }} alt="" />
+     </Stack>
+   </Toolbar>
+ </AppBar>
+
+
+
+        <Outlet/>
+
+        
            
           </Box>
+         
         </Box>
       </ThemeProvider>  
+      
     </>
   );
 

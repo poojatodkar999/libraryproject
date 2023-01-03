@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const SignIn = () => {
-    const [toggle, setToggle] = useState(false);
+const SignIn = (props) => {
+    // const [toggle, setToggle] = useState(false);
+    const toggle= props.toggle;
+const setToggle= props.setToggle;
     const navigate = useNavigate()
   return (
     <>
      <p className="heading">Sign In</p>
-        <div className="sub-heading">
-          Keep creating Digital Certificates & Digital Badges powered by
-          blockchain
-        </div>
+        
         <div>
           <div className="main_toggle">
             <div className="toggler" style={{left:toggle?'0%':'50%'}}></div>
@@ -73,7 +72,11 @@ const SignIn = () => {
               <input type="text" />
             </div>
             <span className="forgotbtn">forgot?</span>
-            <button onClick={()=>navigate('signup')}>Sign In</button>
+            <div> 
+            {  <button onClick={()=>navigate( toggle?'admin':'dashboard')}>Sign In</button>
+            // : <button onClick={()=>navigate('dashboard')}>Sign In</button>
+}
+            </div>
            { !toggle && (<p className="signup_text">
               Don,t have an account? <Link to="signup" >Sign up</Link>
             </p>)}

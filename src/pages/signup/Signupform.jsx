@@ -27,17 +27,18 @@ const Signupform = (props) => {
         <p>Login Email ID</p>
               <input type="text" />
    </div>
-   <div className='signup_form'>
-        <p>Designation</p>
-              <input type="text" />
-   </div>
+   
    <div className='signup_form'>
         <p>Mobile Number</p>
               <input type="text" />
    </div>
+   <div className='signup_form'>
+        <p>Password</p>
+              <input type="password" />
+   </div>
    <div style={{display:"flex",alignItems:"flex-start" ,textAlign:"center"}} >    <input style={{marginTop:"3px"}} type="checkbox" name="" id="" />
 <p style={{fontSize:"14px"}}>By clicking here, you agree to the U-Smart’s <span style={{color:"#008BCD"}}>User Agreements, Policies, and Cookie Policy</span></p></div>
-<button className='btn_blue' onClick={()=>navgator('/dashboard')}>Sign Up</button>
+<button className='btn_blue' onClick={()=>navgator('/')}>Sign Up</button>
     </Stack>
     
     
