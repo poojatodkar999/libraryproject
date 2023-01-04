@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+
 
 const SignIn = (props) => {
     // const [toggle, setToggle] = useState(false);
     const toggle= props.toggle;
 const setToggle= props.setToggle;
     const navigate = useNavigate()
+
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = (data) => {
+      navigate( toggle?'admin':'dashboard')
+        console.log(data);
+    }
   return (
     <>
      <p className="heading">Sign In</p>
         
-        <div>
+       <div>
+       
           <div className="main_toggle">
             <div className="toggler" style={{left:toggle?'0%':'50%'}}></div>
             <div className={ !toggle?"receiver active":"receiver" } onClick={()=>setToggle(true)}>
@@ -60,20 +69,29 @@ const setToggle= props.setToggle;
               <span>User</span>
             </div>
           </div>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div>
               <p>EMAIL ID</p>
-              <input type="text" />
+              <input type="text" {...register("email",
+                            {
+                                required: true,
+                                pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                            })} />
+                            {errors.email && <p className='error_red'>Please check the Email</p>}
             </div>
             <div>
               <p>
                 <span>PASSWORD</span>
               </p>
-              <input type="text" />
+              <input type="password" {...register("password", {
+                            required: true,
+                            pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
+                        })} />
+                         {errors.password && <p className='error_red'>Please check the Password</p>}
             </div>
             <span className="forgotbtn">forgot?</span>
             <div> 
-            {  <button onClick={()=>navigate( toggle?'admin':'dashboard')}>Sign In</button>
+            {  <button >Sign In</button>
             // : <button onClick={()=>navigate('dashboard')}>Sign In</button>
 }
             </div>
@@ -83,7 +101,8 @@ const setToggle= props.setToggle;
           </form>
         </div>
     
-    </>
+   
+         </>
   )
 }
 

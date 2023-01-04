@@ -32,16 +32,16 @@ export const MainListItems = (props) => {
 
  <>
     
-    <Link  style={{textDecoration:"none",color:"#fff"}} to='/home'>
+    <Link  style={{textDecoration:"none",color:"#fff"}} to='/admin'>
         <ListItemButton  >
           <ListItemIcon>
       <img src={dashboard_icon} alt="dash" />
           </ListItemIcon>
-          <ListItemText primary="Home" />
+          <ListItemText primary="Dashboard" />
         </ListItemButton>
       </Link>
 
-      <Link style={{textDecoration:"none",color:"#fff"}} to='/cards'>
+      <Link style={{textDecoration:"none",color:"#fff"}} to='addbook'>
       <ListItemButton>
         <ListItemIcon>
         <img src={activity_icon} alt="dash" />

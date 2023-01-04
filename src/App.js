@@ -11,6 +11,7 @@ import Nav from "./pages/admin/Nav";
 import AddBook from "./pages/admin/AddBook";
 import Content from "./pages/dashboard/content/Content";
 import AdminDash from "./pages/admin/dashboard/AdminDash";
+import Home from "./pages/admin/content/Home";
 
 function App() {
   const [page, setPage] = useState(0);
@@ -35,7 +36,9 @@ function App() {
           <Route path="/dashboard" element={<Content drawerWidth={drawerWidth} open={open} setOpen={setOpen}  toggle={toggle} />} />
         </Route>}
        { toggle && <Route path="/admin" element={<AdminDash drawerWidth={drawerWidth} open={open} setOpen={setOpen} toggle={toggle} />} >
-          < Route  path="/admin" element={<AddBook/> }/>   
+       < Route  path="/admin" element={<Home drawerWidth={drawerWidth} open={open} setOpen={setOpen}/> }/>   
+
+          < Route  path="addbook" element={<AddBook /> }/>   
         </Route>}
         
       </Routes>

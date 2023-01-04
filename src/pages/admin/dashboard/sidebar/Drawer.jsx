@@ -266,39 +266,7 @@ function DashboardContent() {
             {/* {<Show />} */}
             {/* {component} */}
             <Academics/>
-            {
-              <>
-                {/* <Routes>
-                  <Route exact path="/" element={component} />
-                  <Route exact path="/cards" element={<Cards />} />
-                  <Route exact path="/cards/:cardname" element={<Cards />} />
-                  <Route
-                    exact
-                    path="/user-profile"
-                    element={<Settingsamit />}
-                  />
-                  <Route exact path="/user-setting" element={<Settings />} />
-                  <Route
-                    exact
-                    path="/user-transaction"
-                    element={<Transactions />}
-                  />
-                  <Route
-                    exact
-                    path="/user-voilation"
-                    element={<Voilations />}
-                  />
-                  <Route exact path="/rules" element={<Rules1 />} />
-
-                  <Route path="/worksheet" element={<Worksheet />} />
-                  <Route path="/directive" element={<Directmanage />} />
-
-                  <Route path="/roles" element={<Roletable />} />
-                  <Route path="/user-calendar" element={<Fullcalender />} />
-                  <Route path="/user" element={<User />} />
-                </Routes> */}
-              </>
-            }
+           
           </Box>
         </Box>
       </ThemeProvider>

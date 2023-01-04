@@ -5,25 +5,19 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import {Link, Navigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 // Icons
-import dashboard_icon from "../../../Images/Icons/dashboard.svg"
 import activity_icon from '../../../Images/Icons/activity.svg'
-import academic_icon from '../../../Images/Icons/academic.svg'
-import certificate_icon from '../../../Images/Icons/certificate.svg'
-import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
-import List from '@mui/material/List';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+
+
+import HomeIcon from '@mui/icons-material/Home';
 
 
 
-
-export const MainListItems = (props) => {
+export const MainListItems = () => {
   const [open, setOpen] = React.useState(true);
 
-    // const toggle1 = props.toggle;
   const handleClick = () => {
     setOpen(!open);
   };
@@ -36,10 +30,11 @@ export const MainListItems = (props) => {
     
     <Link  style={{textDecoration:"none",color:"#fff"}} to='/dashboard'>
         <ListItemButton  >
-          <ListItemIcon>
-      <img src={dashboard_icon} alt="dash" />
+          
+          <ListItemIcon >
+        <HomeIcon style={{color:"#fff"}} />
           </ListItemIcon>
-          <ListItemText primary="Dashboard" />
+          <ListItemText primary="Home" />
         </ListItemButton>
       </Link>
 
@@ -50,25 +45,9 @@ export const MainListItems = (props) => {
         </ListItemIcon>
         <ListItemText primary="Activities" />
       </ListItemButton>
-      {/* </Link> */}
-      {/* <Link style={{textDecoration:"none"}} to='/worksheet'> */}
-      <ListItemButton>
-        <ListItemIcon>
-        <img src={academic_icon} alt="dash" />
-
-        </ListItemIcon>
-        <ListItemText primary="Academic" />
-      </ListItemButton>
-      <Link style={{textDecoration:"none", color:"#fff"}} to='certificates'>
-      <ListItemButton>
-        <ListItemIcon  >
-        <img src={certificate_icon} alt="dash" />
-
-        </ListItemIcon>
-
-        <ListItemText primary="Certificate" />
-      </ListItemButton>
-      </Link></>
+      
+      
+        </>
      
      
   

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import "../css/Sign.css";
+import { useForm } from "react-hook-form";
 
 const SignUp = (props) => {
     
