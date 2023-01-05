@@ -1,3 +1,71 @@
 .error_red{
     color: rgb(226, 43, 43);
 }
+
+
+:root {
+    --cardWidth: 280px;
+    --cardHeight: 400px;
+    --cardMargin: 16px;
+  }
+  
+  
+  
+  .main-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    margin: var(--cardMargin);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 5px #aaaaaa;
+
+  }
+  .card-header {
+    height: 35%;
+    width: 100%;
+    padding: 0px;
+    overflow: hidden;
+}
+.header-img {
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    border-radius: inherit;
+    transition: all ease-in-out 0.4s;
+}
+.card:hover .header-img {
+    transform: scale(1.25) rotate(2deg);
+}
+.card-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 15px;
+}
+.card-title h1 {
+    font-family: 'Catamaran', sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 0px;
+}
+.btnproduct {
+    padding: 10px 20px;
+margin-top: 50px;
+    border: 1px solid turquoise;
+    border-radius: 100px;
+    text-align: center;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+.btnproduct:hover {
+    background: turquoise;
+    color: #fff;
+}

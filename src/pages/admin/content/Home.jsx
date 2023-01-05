@@ -13,7 +13,7 @@ import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 
 
- 
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -60,61 +60,35 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 const Home = (props) => {
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  boxShadow:"none",
-  // width: `calc(100% - ${drawerWidth}px)`,
-
-  width: "96.2%",
-  backgroundColor: "#EFF5FF",
- ...(open && {
-    marginLeft: props.drawerWidth,
-    width: `calc(100% - ${props.drawerWidth}px)`,
+  const AppBar = styled(MuiAppBar, {
+    shouldForwardProp: (prop) => prop !== "open",
+  })(({ theme, open }) => ({
+    zIndex: theme.zIndex + 1,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-   
-  }),
-}));
-const opener = props.open;
+    boxShadow: "none",
+    // width: `calc(100% - ${drawerWidth}px)`,
+
+    width: "96.2%",
+    backgroundColor: "#EFF5FF",
+    ...(open && {
+      marginLeft: props.drawerWidth,
+      width: `calc(100% - ${props.drawerWidth}px)`,
+      transition: theme.transitions.create(["width", "margin"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+
+    }),
+  }));
+  const opener = props.open;
   return (
     <>
       <>
-        <Toolbar />
-        
-                 <AppBar position={"absolute"} open={opener}>
-            <Toolbar
-              sx={{
-                // pr: "24px", // keep right padding when drawer closed
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-             
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search Book…."
-                  inputProps={{ "aria-label": "search" }}
-                />
-              </Search>
-              <Stack spacing={2} direction="row">
-                <Button>help</Button>
-                <img src={logo} style={{ width: "50px" }} alt="" />
-              </Stack>
-            </Toolbar>
-          </AppBar>
         <Grid
           container
           spacing={4}
@@ -124,137 +98,137 @@ const opener = props.open;
             P: 2,
           }}
         >
-         
-     
-      
-         <Grid
-        container
-        spacing={2}
-        sx={{
-          alignItems: "center",
-          textAlign: "center",
-          ml:2,
-          color:"#2689C3",
-          mt: 2,
-        }}
-      >
-          
-          <Grid item xs={12} md={3} lg={3}>
-            <Paper
-              sx={{
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <p className="number_para">5</p>
 
-              <div
-                style={{
-                  alignItems: "center",
+
+
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              alignItems: "center",
+              textAlign: "center",
+              ml: 2,
+              color: "#2689C3",
+              mt: 2,
+            }}
+          >
+
+            <Grid item xs={12} md={3} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
                   display: "flex",
-                  justifyContent: "space-around",
+                  flexDirection: "column",
                 }}
               >
-                <span>Course Launched</span>{" "}
-                <span>
-                  <FileDownloadIcon />
-                </span>
-              </div>
-            </Paper>
-          </Grid>
-       
-          <Grid item xs={12} md={3} lg={3}>
-            <Paper
-              sx={{
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                // height: 240,
-              }}
-            >
-              <p className="number_para">7</p>
+                <p className="number_para">5</p>
 
-              <div
-                style={{
-                  alignItems: "center",
+                <div
+                  style={{
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <span>Book Launched</span>{" "}
+                  <span>
+                    <FileDownloadIcon />
+                  </span>
+                </div>
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} md={3} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
                   display: "flex",
-                  justifyContent: "space-around",
+                  flexDirection: "column",
+                  // height: 240,
                 }}
               >
-                <span>Learners</span>{" "}
-                <span>
-                  <FileDownloadIcon />
-                </span>
-              </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={3} lg={3}>
-            <Paper
-              sx={{
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                // height: 240,
-              }}
-            >
-              <p className="number_para">71</p>
+                <p className="number_para">7</p>
 
-              <div
-                style={{
-                  alignItems: "center",
+                <div
+                  style={{
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <span>Manage users</span>{" "}
+                  <span>
+                    <FileDownloadIcon />
+                  </span>
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={3} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
                   display: "flex",
-                  justifyContent: "space-around",
+                  flexDirection: "column",
+                  // height: 240,
                 }}
               >
-                <span>Credentials Issued</span>{" "}
-              </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={3} lg={3}>
-            <Paper
-              sx={{
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                // height: 240,
-              }}
-            >
-              <p className="number_para">71</p>
+                <p className="number_para">71</p>
 
-              <div
-                style={{
-                  alignItems: "center",
+                <div
+                  style={{
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <span> Issued Book</span>{" "}
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={3} lg={3}>
+              <Paper
+                sx={{
+                  p: 2,
                   display: "flex",
-                  justifyContent: "space-around",
+                  flexDirection: "column",
+                  // height: 240,
                 }}
               >
-                <span>Badges Issued</span>{" "}
-              </div>
-            </Paper>
-          </Grid>
+                <p className="number_para">71</p>
 
-          <Grid item xs={12} md={6} lg={6} sx={{ textAlign: "center" }}>
-            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-              <h4>Course Process</h4>
-              <Piechart />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6} lg={6}>
-            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-              <Columnchart />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6} lg={6}>
-            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-              <Piechart />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6} lg={6}>
-            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-              <Piechart />
-            </Paper>
-          </Grid>
+                <div
+                  style={{
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <span>Fine Connected</span>{" "}
+                </div>
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} md={6} lg={6} sx={{ textAlign: "center" }}>
+              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                <h4>Course Process</h4>
+                <Piechart />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                <Columnchart />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                <Piechart />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={6}>
+              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                <Piechart />
+              </Paper>
+            </Grid>
           </Grid>
         </Grid>
       </>

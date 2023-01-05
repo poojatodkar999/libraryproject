@@ -39,7 +39,7 @@
 .logoimg{
     /* position: absolute; */
     top:10px;
-width: 150px;
+width: 100px;
 /* height: 194px; */
 /* left: 1052px; */
 /* top: 17px; */
@@ -101,7 +101,7 @@ width: 150px;
 .heading{
     font-weight: 0;
     font-size: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .sub-heading{
     padding: 20px 0;
@@ -179,7 +179,7 @@ width: 150px;
 .signup_subheading{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     
 
 }

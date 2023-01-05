@@ -12,7 +12,7 @@ import { MainListItems } from "./menulist/ListItems";
 
 import "../../dashboard/dashboard.css"
 import { Stack } from "@mui/system";
-import logo from "../../../Images/u-smart.svg"
+import logo from "../../../Images/logo-library.png"
 import SearchIcon from "@mui/icons-material/Search";
 import MuiAppBar from "@mui/material/AppBar";
 
@@ -27,51 +27,6 @@ import { Button, Grid, InputBase, Paper, Toolbar, Typography } from "@mui/materi
 
 
 
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: "#fff",
-  color: "#000",
-  border: " 1px solid #fff",
-
-  "&:hover": {
-    //   backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12c",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
 export default function AdminDash(props) {
 
 
@@ -218,7 +173,7 @@ const mdTheme = createTheme();
               padding: "15px",
             }}
           >
-           <Toolbar />
+           {/* <Toolbar /> */}
         
         <AppBar position={"absolute"} open={open}>
    <Toolbar
@@ -228,22 +183,15 @@ const mdTheme = createTheme();
        justifyContent: "space-between",
      }}
    >
+    <Typography variant="h6" style={{color:"#2689C3",marginLeft:"20px"}}>Library management System</Typography>
     
-     <Search>
-       <SearchIconWrapper>
-         <SearchIcon />
-       </SearchIconWrapper>
-       <StyledInputBase
-         placeholder="Search Book..."
-         inputProps={{ "aria-label": "search" }}
-       />
-     </Search>
      <Stack spacing={2} direction="row">
        <Button>help</Button>
        <img src={logo} style={{ width: "50px" }} alt="" />
      </Stack>
    </Toolbar>
  </AppBar>
+ <Toolbar/>
 
 
 

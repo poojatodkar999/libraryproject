@@ -14,7 +14,7 @@ import AdminDash from "./pages/admin/dashboard/AdminDash";
 import Home from "./pages/admin/content/Home";
 
 function App() {
-  const [page, setPage] = useState(0);
+
   const drawerWidth = 240;
   const [open, setOpen] = useState(true);
   
@@ -27,9 +27,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route path="/" element={<SignIn toggle={toggle} setToggle={setToggle} />} />
-          <Route path="signup" element={<SignUp page={page} />}>
-            <Route index element={<Signupform setPage={setPage} />} />
-            <Route path="signup-form" element={<Signupform setPage={setPage} />} />
+          <Route path="signup" element={<SignUp  />}>
+            {/* <Route index element={<Signupform  />} /> */}
           </Route>
         </Route>
        { !toggle && <Route path="/dashboard" element={ <Dashboard drawerWidth={drawerWidth} open={open} setOpen={setOpen} toggle={toggle} />}>
